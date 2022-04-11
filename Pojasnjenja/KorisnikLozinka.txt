@@ -1,0 +1,15 @@
+Korisnik:       Lozinka:
+ibiocic2020     Yxcvbnm.100
+mmatic2020      Yxcvbnm.100
+mspirko2020     Yxcvbnm.100
+NoName          Qwertzu!1
+
+
+Pojašnjenje:
+Budući da se u zadatku ne traži registracija novih zaposlenika, već samo da se mogu logirati (Prijava) unos podataka u tablicu baze Zaposlenik
+(to je zapravo orginalno bila tablica AspNetUsers) sam riješio tako da sam prvo promijenio kod da omogući uopće registarciju sa UserName (a ne
+kako orginalno radi sa Email-om) te izvršio registraciju gornja 4 usera, te su se tako upisali u bazu. Dodao sam i nova polja Ime i Prezime
+kod registracije budući da je i to navedeno u zadatku za izgled tablice Zaposlenik. Nakon toga sam zakomentirao dijelove koda za registraciju
+(da se ne pojavljuju ni u View-u ni u AccountController-u). To je uvijek moguće odkomentirati i opet omogućiti dodavanje novih usera.
+Također zakomentirao sam i dijelova koda za promjenu passworda. Dakle jedina opcija koju aplikacija nudi zaposleniku je logiranje i odlogiranje,
+dok je promjena passworda onemogućena.

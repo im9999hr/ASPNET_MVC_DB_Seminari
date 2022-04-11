@@ -1,0 +1,75 @@
+﻿@model SeminarUpisi.Models.Seminar
+
+@{
+    ViewBag.Title = "Izbriši seminar";
+}
+
+<style>
+    .dl-horizontal dt {
+        text-align: left;
+        width: 100px;
+    }
+    .dl-horizontal dd {
+        margin-left: 100px;
+    }
+    .btn {
+        left:0 !important;
+    }
+    
+</style>
+
+<h3 style="color:#c9302c">Jeste li sigurni da želite izbrisati seminar, time će se izbrisati i sve predbilježbe na taj seminar?</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Naziv:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Opis:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Datum:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datum)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Predavač:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Predavac)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Popunjen:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Popunjen)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-danger" style="position: relative; left: 100px;" />
+        </div>
+    }
+</div>

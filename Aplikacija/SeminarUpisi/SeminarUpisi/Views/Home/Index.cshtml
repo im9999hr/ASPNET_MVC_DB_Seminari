@@ -1,0 +1,68 @@
+﻿@model IEnumerable<SeminarUpisi.Models.Seminar>
+
+@{
+    ViewBag.Title = "Predbilježba";
+}
+
+<style>
+    .form-control {
+        display: inline;
+    }
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+    #tPredbiljezba #tHeaderRow {
+        border-bottom: 2px solid #ddd;
+    }
+    #tPredbiljezba tr:nth-child(even) {
+        background-color: #f5f5f5;
+    }
+</style>
+
+@using (Html.BeginForm(FormMethod.Get))
+{
+    <br />
+    <p>
+        <b>Pretraga:</b> @Html.TextBox("searchString", null, new { @class = "form-control" }) <input type="submit" value="Pretraži" class="btn btn-default"/>
+    </p>
+    <br />
+}
+<table class="table" id="tPredbiljezba">
+    <tr id="tHeaderRow">
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Predavac)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Odaberi", "DodajPredbiljezbu", new { id = item.IdSeminar })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Predavac)
+            </td>
+        </tr>
+    }
+
+</table>

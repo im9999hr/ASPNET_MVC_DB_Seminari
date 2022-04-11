@@ -1,0 +1,15 @@
+- popunjeni seminari se ne prikazuju u "Predbilježba" pogledu
+- tražilica za seminar je samo po nazivu seminara u "Predbilježba" pogledu
+- tražilica za predbilježbe ima i mogućnost izabira (neobrađene, prihvaćene, odbijene), a pretražuje opet po imenu seminara u "Predbilježbe" pogledu
+- kod obrade predbilježbi ostavio sam opciju da zaposlenik može mijenjati sve podatke o predbilježbi, a također i naziv seminara
+(iako se seminar normalno mijenja u drugom "Seminari" pogledu). Dakle nije da bi se samo mogao promijeniti status (prihvaćena, odbijena), već se mogu
+promijeniti i svi ostali podaci
+- postoji i validacija za unos i obradu seminara koji bi bio u prošlosti, a tako i obrada predbilježbe za taj seminar
+- brisanjem seminara kaskadno se brišu i sve predbilježbe na taj seminar (bude poruka upozorenja)
+- osiguranje od grešaka je pomoću try/catch u svakoj akciji (to sam testirao uglavnom gašenjem baze prije neke akcije),
+ a one greške van toga (kontroler i akcije) se ulove aktivacijom u Web.config customErrors s mode=on (istestirao sam sa namjernim throw u kodu
+ koji je van try/catcha, te uklanjanjem tog throw-a kasnije). Aktivirano je i globalno osiguranje (istestirao sam ga sa requestom
+ gdje je u URL-u neki krivi parameter)
+
+- baza na mom PC-u je bila SQLEXPRESS
+
